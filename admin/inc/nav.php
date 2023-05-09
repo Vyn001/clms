@@ -1,4 +1,7 @@
-<?php $uri = basename($_SERVER['REQUEST_URI']); ?>
+<?php
+ $uri = basename($_SERVER['REQUEST_URI']); 
+ include "session.php";
+ ?>
 <div class="sidebar pe-4 pb-3" style="background-color: #000000;opacity:0.8;">
     <nav class="navbar  navbar-dark">
         <a href="index.html" class="navbar-brand mx-4 mb-3">

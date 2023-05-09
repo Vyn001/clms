@@ -1,35 +1,10 @@
-<?php
-include "conn.php";
-session_start();
-
-if (empty($_SESSION)) {
-?>
-    <script>
-        alert("Session Expired\nPlease Login again.");
-        window.location.href = "../index.php";
-    </script>
-<?php
-
-} else {
-    $email = $_SESSION['email'];
-
-    $getadmin = mysqli_query($conn, "SELECT * FROM admin WHERE email='$email'");
-    while ($row = mysqli_fetch_object($getadmin)) {
-
-        $fn = $row->fn;
-    }
-}
-
-
-
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include "inc/head.html"; ?>
+<head>
+    <title>Home</title>
+    <?php include "inc/head.html"; ?>
+</head>
 
 <body id="top">
     <div class="container-fluid position-relative d-flex p-0">
@@ -96,7 +71,7 @@ if (empty($_SESSION)) {
             <!-- List of Lab Assistants -->
             <div class="container-fluid pt-4 px-4" id="tab">
                 <div class="bg-secondary text-center rounded p-4">
-                  
+
                     <h5 class="fw-bold text-dark">List of Laboratory Assitants</h5>
                     <div class="table-responsive">
                         <table class="table text-start align-middle  table-hover mb-0 " id="Lab">

@@ -1,35 +1,11 @@
-<?php
-include "conn.php";
-session_start();
-
-if (empty($_SESSION)) {
-?>
-    <script>
-        alert("Session Expired\nPlease Login again.");
-        window.location.href = "../index.php";
-    </script>
-<?php
-
-} else {
-    $email = $_SESSION['email'];
-
-    $getadmin = mysqli_query($conn, "SELECT * FROM admin WHERE email='$email'");
-    while ($row = mysqli_fetch_object($getadmin)) {
-
-        $fn = $row->fn;
-    }
-}
-
-
-
-?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
-
+<head>
+    <title>Assistants List</title>
 <?php include "inc/head.html"; ?>
+</head>
+
 
 <body id="top">
     <div class="container-fluid position-relative d-flex p-0">
